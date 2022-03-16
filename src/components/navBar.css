@@ -1,0 +1,18 @@
+nav {
+    background-color: rgb(190, 190, 190);
+}
+
+#navBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#navBarItems {
+    display: flex;
+    flex-direction: row;
+}
+
+#navBarItems li {
+    margin: 0 20px;
+}
