@@ -1,11 +1,17 @@
 nav {
     background-color: rgb(190, 190, 190);
+    padding: 20px;
+}
+
+#logo {
+    width: 200px;
 }
 
 #navBar {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    align-items: center;
 }
 
 #navBarItems {

@@ -9,7 +9,7 @@ function NavBar() {
                 <a href="index.html">
                     <img id="logo" src={logo}></img>
                 </a>
-                <p>MAUKA TIENDA ONLINE</p>
+                <p>MAUKA TIENDA</p>
                 <ul id="navBarItems">
                     <li>
                         <a href="#">Productos</a>
