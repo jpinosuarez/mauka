@@ -1,0 +1,37 @@
+nav {
+    background-color: white;
+    padding: 20px;
+}
+
+#logo {
+    width: 300px;
+}
+
+#navBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#navBarItems {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    li {
+        margin: 0 20px;
+        a:link {
+            color: black;
+            text-decoration: none;
+        }
+        a:visited {
+            color: black;
+            text-decoration: none;
+        }
+        svg {
+            width: 50px;
+        }
+    }
+}
