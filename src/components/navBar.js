@@ -12,10 +12,22 @@ function NavBar() {
                 </a>
                 <ul id="navBarItems">
                     <li>
-                        <a href="#">PRODUCTOS</a>
+                        <a href="#">NEW ARRIVALS</a>
                     </li>
                     <li>
-                        <a href="#">MI CUENTA</a>
+                        <a href="#">HOMBRES</a>
+                    </li>
+                    <li>
+                        <a href="#">MUJERES</a>
+                    </li>
+                    <li>
+                        <a href="#">NIÑOS</a>
+                    </li>
+                    <li>
+                        <a href="#">WINTER</a>
+                    </li>
+                    <li>
+                        <a href="#">SALE</a>
                     </li>
                     <li>
                         <CartWidget/>
