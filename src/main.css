@@ -31,3 +31,6 @@ nav {
       text-decoration: none; }
     #navBarItems li svg {
       width: 50px; }
+
+.card {
+  width: 18rem; }
