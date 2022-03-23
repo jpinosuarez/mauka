@@ -6,7 +6,7 @@ function ItemListContainer () {
     return (
         <>
             <h1 className="text-center">ItemListContainer</h1>
-            <ItemCount title="tarjetita"/>
+            <ItemCount stock={5} initial={0}/>
         </>    
     )
 }
