@@ -17,6 +17,9 @@ function ItemCount({stock, initial, onAdd}) {
         }
     }
 
+    function handlerOnAdd() {
+        onAdd(contador)
+    }
 
     return (
         <div className="card p-3 mx-auto my-5">
@@ -27,7 +30,7 @@ function ItemCount({stock, initial, onAdd}) {
                     <p className="m-0 w-25 text-center">{contador}</p>
                     <button className="btn btn-primary" onClick={sumar}>+</button>
                 </div>
-                <button className="btn btn-primary m-3">Agregar al carrito</button>
+                <button className="btn btn-primary m-3" onClick={handlerOnAdd}>Agregar al carrito</button>
             </>
         </div>
     )
