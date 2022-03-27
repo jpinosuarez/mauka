@@ -6,7 +6,7 @@ import ItemList from "./ItemList";
 const productosIniciales = [
     { id: "buzo1", title: "buzo1", price: 1000, pictureUrl: "https://static.dafiti.com.ar/p/aloud-0708-262147-1-product.jpg" },
     { id: "buzo2", title: "buzo2", price: 1500, pictureUrl: "https://static.dafiti.com.ar/p/aloud-0751-566909-1-product.jpg" },
-    { id: "buzo3", title: "buzo3", price: 2000, pictureUrl: "https://www.estampame.com/sitioweb/wp-content/uploads/2020/05/Buzo5-1.jpg" }
+    { id: "buzo3", title: "buzo3", price: 2000, pictureUrl: "https://static.dafiti.com.ar/p/boardwise-6895-540319-3-product.jpg" }
 ];
 
 const promesa = new Promise ((resolve, reject)=>{
@@ -28,7 +28,6 @@ const ItemListContainer = () => {
     const [productos, setProductos] = useState([]);
 
     useEffect(() => {
-
         console.log(promesa);
 
         promesa.then(()=>{
@@ -37,7 +36,7 @@ const ItemListContainer = () => {
             console.log("todo mal");
         })
         
-    }, [])
+    })
 
 
 
@@ -45,7 +44,7 @@ const ItemListContainer = () => {
         <>
             <h1 className="text-center">ItemListContainer</h1>
             {/* <ItemCount stock={5} initial={1} onAdd={onAdd}/> */}
-            <ItemList />
+            <ItemList name="joaquin" productos={productosIniciales}/>
         </>
     )
 }
