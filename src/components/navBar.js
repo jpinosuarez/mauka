@@ -8,26 +8,26 @@ function NavBar() {
         <>
             <nav id="navBar">
                 <a href="index.html">
-                    <img id="logo" src={logo}></img>
+                    <img id="logo" src={logo} alt="logo"></img>
                 </a>
                 <ul id="navBarItems">
                     <li>
-                        <a href="#">NEW ARRIVALS</a>
+                        <p>NEW ARRIVALS</p>
                     </li>
                     <li>
-                        <a href="#">HOMBRES</a>
+                        <p>HOMBRES</p>
                     </li>
                     <li>
-                        <a href="#">MUJERES</a>
+                        <p>MUJERES</p>
                     </li>
                     <li>
-                        <a href="#">NIÑOS</a>
+                        <p>NIÑOS</p>
                     </li>
                     <li>
-                        <a href="#">WINTER</a>
+                        <p>WINTER</p>
                     </li>
                     <li>
-                        <a href="#">SALE</a>
+                        <p>SALE</p>
                     </li>
                     <li>
                         <CartWidget/>
