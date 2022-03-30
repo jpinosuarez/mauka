@@ -3,17 +3,29 @@ import "../main.css";
 // import ItemCount from "./ItemCount";
 import ItemList from "./ItemList";
 
+// =========================
+import { css } from "@emotion/react";
+import GridLoader from "react-spinners/GridLoader";
+// =========================
+
 const productosIniciales = [
     { id: "buzo1", title: "buzo1", price: 1000, pictureUrl: "https://static.dafiti.com.ar/p/aloud-0708-262147-1-product.jpg" },
     { id: "buzo2", title: "buzo2", price: 1500, pictureUrl: "https://static.dafiti.com.ar/p/aloud-0751-566909-1-product.jpg" },
     { id: "buzo3", title: "buzo3", price: 2000, pictureUrl: "https://static.dafiti.com.ar/p/boardwise-6895-540319-3-product.jpg" }
 ];
 
-const promesa = new Promise ((resolve, reject)=>{
+const promesa = new Promise((resolve, reject) => {
     setTimeout(() => {
         resolve(productosIniciales);
-}, 2000)
+    }, 2000)
 });
+
+
+const override = css`
+    display: block;
+    margin: 50px auto;
+    border-color: red;
+`;
 
 const ItemListContainer = () => {
 
@@ -26,25 +38,30 @@ const ItemListContainer = () => {
     // }
 
     const [productos, setProductos] = useState([]);
+    // =========================
+    let [loading, setLoading] = useState(true);
+    // =========================
 
     useEffect(() => {
         console.log(promesa);
 
-        promesa.then((productos)=>{
+        promesa.then((productos) => {
             setProductos(productos)
-        }).catch(()=>{
-            console.log("todo mal");
+        }).catch(() => {
+            console.log("error");
+        }).finally(()=>{
+            setLoading(false);
         })
-        
+
     })
 
 
 
     return (
         <>
-            <h1 className="text-center">ItemListContainer</h1>
             {/* <ItemCount stock={5} initial={1} onAdd={onAdd}/> */}
-            <ItemList name="joaquin" productos={productos}/>
+            <ItemList productos={productos} />
+            <GridLoader color="#e87d31" loading={loading} css={override} size={35} />
         </>
     )
 }
