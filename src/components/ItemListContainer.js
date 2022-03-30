@@ -30,7 +30,7 @@ const ItemListContainer = () => {
     useEffect(() => {
         console.log(promesa);
 
-        promesa.then(()=>{
+        promesa.then((productos)=>{
             setProductos(productos)
         }).catch(()=>{
             console.log("todo mal");
@@ -44,7 +44,7 @@ const ItemListContainer = () => {
         <>
             <h1 className="text-center">ItemListContainer</h1>
             {/* <ItemCount stock={5} initial={1} onAdd={onAdd}/> */}
-            <ItemList name="joaquin" productos={productosIniciales}/>
+            <ItemList name="joaquin" productos={productos}/>
         </>
     )
 }
