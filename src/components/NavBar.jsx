@@ -3,7 +3,7 @@ import React from "react";
 import "../main.css";
 import CartWidget from "./CartWidget"
 
-function NavBar() {
+const NavBar = () => {
     return (
         <>
             <nav id="navBar">
