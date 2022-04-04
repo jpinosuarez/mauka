@@ -12,6 +12,7 @@ const ItemDetail = (details) => {
                     <p>3 Y 6 cuotas sin interés</p>
                     <p>ENVÍO GRATIS COMPRA SUPERIOR A $9900</p>
                     <p>$ {details.price}</p>
+                    <p>Stock: {details.stock} unidades</p>
                     <button className='btn btn-primary'>COMPRAR AHORA</button>
                 </div>
             </div>
