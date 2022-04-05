@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import "../main.css";
 
 const Item = (item) => {
     return (
@@ -6,7 +7,7 @@ const Item = (item) => {
             <img className='w-75' src={item.pictureUrl} alt="" />
             <p className='text-center'>{item.title}</p>
             <p className='text-center'>$ {item.price}</p>
-            <button className='btn btn-primary my-2'>Ver detalles</button>
+            <button className='btn btn-primary'>VER DETALLES</button>
         </div>
     )
 }
