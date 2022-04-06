@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../main.css";
 // import ItemCount from "./ItemCount";
 import ItemList from "./ItemList";
+import { useParams } from "react-router-dom/umd/react-router-dom.development";
 
 // =========================
 import { css } from "@emotion/react";
@@ -9,9 +10,9 @@ import GridLoader from "react-spinners/GridLoader";
 // =========================
 
 const productosIniciales = [
-    { id: "buzo1", title: "Buzo Canguro Azul MAUKA", price: 1000, pictureUrl: "https://static.dafiti.com.ar/p/aloud-0708-262147-1-product.jpg" },
-    { id: "buzo2", title: "Buzo Canguro Negro MAUKA", price: 1500, pictureUrl: "https://static.dafiti.com.ar/p/aloud-0751-566909-1-product.jpg" },
-    { id: "buzo3", title: "Buzo Canguro Naranja MAUKA", price: 2000, pictureUrl: "https://static.dafiti.com.ar/p/boardwise-6895-540319-3-product.jpg" }
+    { id: "buzo1", title: "Buzo Canguro Azul MAUKA", price: 1000, pictureUrl: "https://static.dafiti.com.ar/p/aloud-0708-262147-1-product.jpg", category:"hombre" },
+    { id: "buzo2", title: "Buzo Canguro Negro MAUKA", price: 1500, pictureUrl: "https://static.dafiti.com.ar/p/aloud-0751-566909-1-product.jpg", category:"mujer" },
+    { id: "buzo3", title: "Buzo Canguro Naranja MAUKA", price: 2000, pictureUrl: "https://static.dafiti.com.ar/p/boardwise-6895-540319-3-product.jpg", category:"winter" }
 ];
 
 const promesa = new Promise((resolve, reject) => {
@@ -42,11 +43,17 @@ const ItemListContainer = () => {
     let [loading, setLoading] = useState(true);
     // =========================
 
+    const {name} = useParams();
+    console.log(name);
+
     useEffect(() => {
-        console.log(promesa);
 
         promesa.then((productos) => {
-            setProductos(productos)
+            if (name) {
+                setProductos(productos.filter(name=>productos.category===na))
+            }else{
+                setProductos(productos)
+            }
         }).catch(() => {
             console.log("error");
         }).finally(()=>{
