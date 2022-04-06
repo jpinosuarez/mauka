@@ -3,17 +3,12 @@ import "../main.css";
 // import ItemCount from "./ItemCount";
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom/umd/react-router-dom.development";
+import { productosIniciales } from "./mock/productosIniciales";
 
 // =========================
 import { css } from "@emotion/react";
 import GridLoader from "react-spinners/GridLoader";
 // =========================
-
-const productosIniciales = [
-    { id: "buzo1", title: "Buzo Canguro Azul MAUKA", price: 1000, pictureUrl: "https://static.dafiti.com.ar/p/aloud-0708-262147-1-product.jpg", category:"hombre" },
-    { id: "buzo2", title: "Buzo Canguro Negro MAUKA", price: 1500, pictureUrl: "https://static.dafiti.com.ar/p/aloud-0751-566909-1-product.jpg", category:"mujer" },
-    { id: "buzo3", title: "Buzo Canguro Naranja MAUKA", price: 2000, pictureUrl: "https://static.dafiti.com.ar/p/boardwise-6895-540319-3-product.jpg", category:"winter" }
-];
 
 const promesa = new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -43,14 +38,13 @@ const ItemListContainer = () => {
     let [loading, setLoading] = useState(true);
     // =========================
 
-    const {name} = useParams();
-    console.log(name);
+    const {id} = useParams();
 
     useEffect(() => {
 
         promesa.then((productos) => {
-            if (name) {
-                setProductos(productos.filter(name=>productos.category===na))
+            if (id) {
+                setProductos(productos.filter(producto=>producto.category==id))
             }else{
                 setProductos(productos)
             }
@@ -60,7 +54,7 @@ const ItemListContainer = () => {
             setLoading(false);
         })
 
-    })
+    }, [id])
 
 
 

@@ -1,3 +1,8 @@
+Este es un proyecto de e-commerce creado en React como proyecto final para el curso correspondiente de Coderhouse.
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

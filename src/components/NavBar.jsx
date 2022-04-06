@@ -2,16 +2,16 @@ import logo from "./logo.png";
 import React from "react";
 import "../main.css";
 import CartWidget from "./CartWidget"
-import { NavLink, Link } from "react-router-dom";
+import { NavLink} from "react-router-dom";
 
 const NavBar = () => {
     const categories = [
-        { name: "NEW ARRIVALS", route: "/categories/newarrivals", id: 1 },
-        { name: "HOMBRES", route: "/categories/hombres", id: 2 },
-        { name: "MUJERES", route: "/categories/mujeres", id: 3 },
-        { name: "NIÑOS", route: "/categories/ninos", id: 4 },
-        { name: "WINTER", route: "/categories/winter", id: 5 },
-        { name: "SALE", route: "/categories/sale", id: 6 }
+        { name: "NEW ARRIVALS", route: "/category/newarrivals", id: 1 },
+        { name: "HOMBRES", route: "/category/hombres", id: 2 },
+        { name: "MUJERES", route: "/category/mujeres", id: 3 },
+        { name: "NIÑOS", route: "/category/ninos", id: 4 },
+        { name: "WINTER", route: "/category/winter", id: 5 },
+        { name: "SALE", route: "/category/sale", id: 6 }
     ]
     return (
         <>
