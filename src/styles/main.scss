@@ -25,16 +25,24 @@ nav {
     justify-content: center;
     align-items: center;
     list-style-type: none;
+
     li {
         margin: 0 20px;
+
         a:link {
             color: black;
             text-decoration: none;
         }
+
         a:visited {
             color: black;
             text-decoration: none;
         }
+
+        a.active {
+            color: #E87D31;
+        }
+
         svg {
             width: 50px;
         }
