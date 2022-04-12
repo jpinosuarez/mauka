@@ -1,9 +1,9 @@
-import NavBar from './components/NavBar';
+import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from "./containers/ItemList/ItemListContainer";
 import ItemDetailContainer from './containers/ItemDetail/ItemDetailContainer';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Cart from './components/Cart';
-import Error404 from './components/Error404';
+import Cart from './components/Cart/Cart';
+import Error404 from './components/404/Error404';
 
 function App() {
   return (

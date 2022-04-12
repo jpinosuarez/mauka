@@ -1,5 +1,4 @@
 import React from 'react';
-// import "../../styles/main.css";
 import { Link } from 'react-router-dom/umd/react-router-dom.development';
 
 const Item = (item) => {
