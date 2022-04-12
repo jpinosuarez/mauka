@@ -1,6 +1,6 @@
 import logo from "./logo.png";
 import React from "react";
-import "../main.css";
+// import "../styles/main.css";
 import CartWidget from "./CartWidget"
 import { NavLink} from "react-router-dom";
 
@@ -22,13 +22,13 @@ const NavBar = () => {
                 <ul id="navBarItems">
                     {categories.map((element) => {
                         return (
-                            <li>
-                                <NavLink key={element.id} to={element.route}>{element.name}</NavLink>
+                            <li key={element.id}>
+                                <NavLink to={element.route}>{element.name}</NavLink>
                             </li>
                         )
                     })}
-                    <li>
-                        <NavLink key="cart" to="/cart">
+                    <li key="cart">
+                        <NavLink to="/cart">
                             <CartWidget />
                         </NavLink>
                     </li>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../main.css";
+// import "../styles/main.css";
 
 const ItemCount = ({stock, initial, onAdd}) => {
 
@@ -24,7 +24,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
     return (
         <div className="card p-3 mx-auto my-5">
             <>
-                <h2 className="text-center">Producto</h2>
+                <p className="text-center">Seleccioná la cantidad de unidades</p>
                 <div className="d-flex flex-row justify-content-around align-items-center">
                     <button className="btn btn-primary" onClick={restar}>-</button>
                     <p className="m-0 w-25 text-center">{contador}</p>

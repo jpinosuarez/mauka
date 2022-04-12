@@ -1,6 +1,6 @@
 import NavBar from './components/NavBar';
-import ItemListContainer from "./components/ItemListContainer";
-import ItemDetailContainer from './components/ItemDetailContainer';
+import ItemListContainer from "./containers/ItemList/ItemListContainer";
+import ItemDetailContainer from './containers/ItemDetail/ItemDetailContainer';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Cart from './components/Cart';
 import Error404 from './components/Error404';
@@ -18,10 +18,6 @@ function App() {
       <Route path="/cart" element={<Cart/>}/>
       <Route path="*" element={<Error404/>}/>
     </Routes>
-      {/* <main>
-        <ItemListContainer />
-        <ItemDetailContainer />
-      </main> */}
     </BrowserRouter>
   )
 }

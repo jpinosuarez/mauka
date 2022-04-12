@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import "../main.css";
-import ItemDetail from "./ItemDetail";
+// import "../../styles/main.css";
+import ItemList from "./ItemList"
 import { useParams } from "react-router-dom/umd/react-router-dom.development";
-import { productosIniciales } from "./mock/productosIniciales";
+import { productosIniciales } from "../../mock/productosIniciales";
 
 // =========================
 import { css } from "@emotion/react";
@@ -22,31 +22,39 @@ const override = css`
     border-color: red;
 `;
 
-const ItemDetailContainer = () => {
+const ItemListContainer = () => {
 
-    const [producto, setProducto] = useState({});
+    const [productos, setProductos] = useState([]);
     // =========================
     let [loading, setLoading] = useState(true);
     // =========================
+
     const {id} = useParams();
 
     useEffect(() => {
-        promesa.then((producto) => {
-            setProducto(producto.find(p=>p.id==id))
-            console.log(producto);
+
+        promesa.then((productos) => {
+            if (id) {
+                setProductos(productos.filter(producto=>producto.category===id))
+            }else{
+                setProductos(productos)
+            }
         }).catch(() => {
             console.log("error");
         }).finally(()=>{
             setLoading(false);
         })
+
     }, [id])
+
+
 
     return (
         <>
-            <ItemDetail key={producto.id} id={producto.id} title={producto.title} pictureUrl={producto.pictureUrl} price={producto.price} stock={producto.stock} />
+            <ItemList productos={productos} />
             <GridLoader color="#e87d31" loading={loading} css={override} size={35} />
         </>
     )
 }
 
-export default ItemDetailContainer;
+export default ItemListContainer;

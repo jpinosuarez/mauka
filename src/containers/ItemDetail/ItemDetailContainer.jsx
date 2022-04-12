@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
-import "../main.css";
-// import ItemCount from "./ItemCount";
-import ItemList from "./ItemList";
+// import "../../styles/main.css";
+import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom/umd/react-router-dom.development";
-import { productosIniciales } from "./mock/productosIniciales";
+import { productosIniciales } from "../../mock/productosIniciales";
 
 // =========================
 import { css } from "@emotion/react";
@@ -23,48 +22,31 @@ const override = css`
     border-color: red;
 `;
 
-const ItemListContainer = () => {
+const ItemDetailContainer = () => {
 
-    // function onAdd(params) {
-    //     if (params > 0) {
-    //         console.log("Usted agregó " + params + " unidad/es al carrito.");
-    //     } else {
-    //         console.log("No ha seleccionado unidades para agregar al carrito");
-    //     }
-    // }
-
-    const [productos, setProductos] = useState([]);
+    const [producto, setProducto] = useState({});
     // =========================
     let [loading, setLoading] = useState(true);
     // =========================
-
     const {id} = useParams();
 
     useEffect(() => {
-
-        promesa.then((productos) => {
-            if (id) {
-                setProductos(productos.filter(producto=>producto.category==id))
-            }else{
-                setProductos(productos)
-            }
+        promesa.then((producto) => {
+            setProducto(producto.find(p=>p.id==id))
+            console.log(producto);
         }).catch(() => {
             console.log("error");
         }).finally(()=>{
             setLoading(false);
         })
-
     }, [id])
-
-
 
     return (
         <>
-            {/* <ItemCount stock={5} initial={1} onAdd={onAdd}/> */}
-            <ItemList productos={productos} />
+            <ItemDetail key={producto.id} id={producto.id} title={producto.title} pictureUrl={producto.pictureUrl} price={producto.price} stock={producto.stock} />
             <GridLoader color="#e87d31" loading={loading} css={override} size={35} />
         </>
     )
 }
 
-export default ItemListContainer;
+export default ItemDetailContainer;
