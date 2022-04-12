@@ -1,7 +1,18 @@
-Este es un proyecto de e-commerce creado en React como proyecto final para el curso correspondiente de Coderhouse.
+Proyecto de Ecommerce React JS
 
+Detalles del proyecto:
 
+Este ecommerce es el proyecto final para el curso de React JS de Coderhouse. Es la tienda online de Mauka, un emprendimiento que se dedica a la comercialización de indumentaria, como buzos, remeras, gorras y gorros.
 
+Herramientas utilizadas:
+
+-Create React App
+-React Router
+-SASS
+-Bootstrap
+-React Spinners
+
+====================================================================================================
 
 # Getting Started with Create React App
 
