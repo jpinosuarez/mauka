@@ -1,15 +1,18 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import ItemCount from './ItemCount';
 import { Link } from 'react-router-dom';
+import { contexto } from '../../context/CartContext';
 
 
 const ItemDetail = (details) => {
 
     const [finalizado, setFinalizado] = useState(false);
+    const {addProduct} = useContext(contexto);
 
     const onAdd = (params)=> {
         if (params > 0) {
             console.log("Usted agregó " + params + " unidad/es al carrito.");
+            addProduct(details, params);
         } else {
             console.log("No ha seleccionado unidades para agregar al carrito");
         }
