@@ -36,3 +36,19 @@ nav {
 
 .card {
   width: 18rem; }
+
+#cart {
+  padding: 0 5rem; }
+  #cart h1 {
+    font-size: 1.6rem; }
+  #cart div ul {
+    padding: 0; }
+    #cart div ul li {
+      list-style-type: none; }
+
+#CartItem {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  padding: 2rem 0; }
+  #CartItem img {
+    width: 165px; }

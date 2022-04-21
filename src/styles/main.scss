@@ -52,3 +52,31 @@ nav {
 .card {
     width: 18rem;
 }
+
+// Cart styles
+
+#cart {
+    padding: 0 5rem;
+    h1 {
+        font-size: 1.6rem;
+    }
+    div {
+        ul {
+            padding: 0;
+            li {
+                list-style-type: none;
+            }
+        }
+    }
+}
+
+// Cart Item styles
+
+#CartItem {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding: 2rem 0;
+    img {
+        width: 165px;
+    }
+}
