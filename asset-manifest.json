@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/maukaPinoSuarez/static/css/main.536e492f.chunk.css",
+    "main.js": "/maukaPinoSuarez/static/js/main.84795cb8.chunk.js",
+    "main.js.map": "/maukaPinoSuarez/static/js/main.84795cb8.chunk.js.map",
+    "runtime-main.js": "/maukaPinoSuarez/static/js/runtime-main.c0459207.js",
+    "runtime-main.js.map": "/maukaPinoSuarez/static/js/runtime-main.c0459207.js.map",
+    "static/js/2.543825ea.chunk.js": "/maukaPinoSuarez/static/js/2.543825ea.chunk.js",
+    "static/js/2.543825ea.chunk.js.map": "/maukaPinoSuarez/static/js/2.543825ea.chunk.js.map",
+    "static/js/3.436bd0ec.chunk.js": "/maukaPinoSuarez/static/js/3.436bd0ec.chunk.js",
+    "static/js/3.436bd0ec.chunk.js.map": "/maukaPinoSuarez/static/js/3.436bd0ec.chunk.js.map",
+    "index.html": "/maukaPinoSuarez/index.html",
+    "static/css/main.536e492f.chunk.css.map": "/maukaPinoSuarez/static/css/main.536e492f.chunk.css.map",
+    "static/js/2.543825ea.chunk.js.LICENSE.txt": "/maukaPinoSuarez/static/js/2.543825ea.chunk.js.LICENSE.txt",
+    "static/media/error404.73f86242.svg": "/maukaPinoSuarez/static/media/error404.73f86242.svg",
+    "static/media/logo.a9eecb26.png": "/maukaPinoSuarez/static/media/logo.a9eecb26.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c0459207.js",
+    "static/js/2.543825ea.chunk.js",
+    "static/css/main.536e492f.chunk.css",
+    "static/js/main.84795cb8.chunk.js"
+  ]
+}
