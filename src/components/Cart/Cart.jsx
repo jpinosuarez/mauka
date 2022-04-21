@@ -1,8 +1,26 @@
-import React from 'react';
+import React, { useContext, useState, useEffect } from 'react';
+import CartItem from './CartItem';
+import { contexto } from '../../context/CartContext';
 
-const Cart = ()=>{
+
+const Cart = () => {
+
+    const { cart } = useContext(contexto);
+    // const {productsInCart, setProductsInCart} = useState([]);
+
+    // useEffect(() => {
+    //     first
+
+    //     return () => {
+    //         second
+    //     }
+    // }, [third])
+
+
     return (
-        <h1 className='text-center my-5'>Cart</h1>
+        cart.map((product) => {
+            return <CartItem title={product.title} price={product.price} />
+        })
     )
 }
 

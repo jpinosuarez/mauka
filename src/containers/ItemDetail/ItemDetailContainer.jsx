@@ -32,7 +32,6 @@ const ItemDetailContainer = () => {
     useEffect(() => {
         promesa.then((producto) => {
             setProducto(producto.find(p=>p.id==id))
-            console.log(producto);
         }).catch(() => {
             console.log("error");
         }).finally(()=>{
