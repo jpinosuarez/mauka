@@ -67,16 +67,26 @@ nav {
                 list-style-type: none;
             }
         }
+        div {
+            h2 {
+                border-bottom: 1px solid black;
+            }
+        }
     }
 }
 
 // Cart Item styles
 
-#CartItem {
+.CartItem {
     border-top: 1px solid black;
     border-bottom: 1px solid black;
-    padding: 2rem 0;
+    padding: 1.3rem 0;
     img {
         width: 165px;
+    }
+    #trashIcon:hover {
+        transition: 0.2s ease-in-out;
+        color: #E87D31;
+        cursor: pointer;
     }
 }

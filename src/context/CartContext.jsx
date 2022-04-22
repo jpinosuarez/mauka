@@ -17,9 +17,18 @@ const CustomProvider = ({children}) => {
         } else {
             setCart([...cart, newProduct]);
         }
+
     };
 
-    const removeItem = () => {};
+    const removeItem = (item) => {
+        const itemToRemove= cart.find(product=>product.id==item.id)
+        console.log(itemToRemove);
+        const index = cart.indexOf(itemToRemove)
+        console.log(index);
+        const aux = [...cart];
+        aux.splice(index, 1)
+        setCart(aux);
+    };
 
     const IsInCart = (id) => {
         return false;

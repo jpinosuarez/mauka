@@ -45,10 +45,16 @@ nav {
     padding: 0; }
     #cart div ul li {
       list-style-type: none; }
+  #cart div div h2 {
+    border-bottom: 1px solid black; }
 
-#CartItem {
+.CartItem {
   border-top: 1px solid black;
   border-bottom: 1px solid black;
-  padding: 2rem 0; }
-  #CartItem img {
+  padding: 1.3rem 0; }
+  .CartItem img {
     width: 165px; }
+  .CartItem #trashIcon:hover {
+    transition: 0.2s ease-in-out;
+    color: #E87D31;
+    cursor: pointer; }
