@@ -13,7 +13,7 @@ const CartItem = (product) => {
     };
 
     return (
-        <div className='CartItem d-flex flex-column'>
+        <div className='CartItem border-bottom my-3 border-secondary d-flex flex-column'>
             <div className='d-flex flex-row'>
                 <div className='w-75 d-flex flex-row align-items-center'>
                     <img src={product.pictureURL} alt="" />

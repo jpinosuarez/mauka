@@ -1,49 +1,62 @@
-import React, {createContext, useState} from 'react';
+import React, { createContext, useState } from 'react';
 
 export const contexto = createContext();
-const {Provider} = contexto;
+const { Provider } = contexto;
 
-const CustomProvider = ({children}) => {
+const CustomProvider = ({ children }) => {
     const [cart, setCart] = useState([]);
+    const [widgetQty, setWidgetQty] = useState(0)
+    const [total, setTotal] = useState(0);
 
     const addProduct = (product, qty) => {
-        const newProduct = {...product, qty};
-        if (IsInCart(product.id)) {
-            const productFind = cart.find(product=>product.id===newProduct.id);
-            const index = cart.indexOf(productFind);
-            const aux = [...cart];
+        const newProduct = { ...product, qty };
+        const productFind = cart.find(product => product.id === newProduct.id);
+        const index = cart.indexOf(productFind);
+        const aux = [...cart];
+        if (index >= 0) {
             aux[index].qty += qty;
-            setCart(aux);
+            updateTotals();
+
         } else {
             setCart([...cart, newProduct]);
+            setWidgetQty(widgetQty+qty)
         }
-
+        // setWidgetQty(widgetQty+qty)
+        // updateTotals();
     };
 
     const removeItem = (item) => {
-        const itemToRemove= cart.find(product=>product.id==item.id)
-        console.log(itemToRemove);
+        const itemToRemove = cart.find(product => product.id == item.id)
         const index = cart.indexOf(itemToRemove)
-        console.log(index);
         const aux = [...cart];
         aux.splice(index, 1)
         setCart(aux);
-    };
-
-    const IsInCart = (id) => {
-        return false;
+        setWidgetQty(widgetQty-item.qty);
     };
 
     const clear = () => {
         setCart([]);
     }
 
+    const updateTotals = ()=>{
+        let qtyCart = 0;
+        let total = 0;
+        cart.forEach(product => {
+            qtyCart+=product.qty;
+            total+=product.price;
+        });
+        setWidgetQty(qtyCart);
+    }
+
+
+
     const ContextValue = {
         cart,
         addProduct,
         removeItem,
-        IsInCart,
-        clear
+        clear,
+        widgetQty,
+        total
     }
 
     return (

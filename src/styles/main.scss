@@ -67,22 +67,15 @@ nav {
                 list-style-type: none;
             }
         }
-        div {
-            h2 {
-                border-bottom: 1px solid black;
-            }
-        }
     }
 }
 
 // Cart Item styles
 
 .CartItem {
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
     padding: 1.3rem 0;
     img {
-        width: 165px;
+        width: 150px;
     }
     #trashIcon:hover {
         transition: 0.2s ease-in-out;

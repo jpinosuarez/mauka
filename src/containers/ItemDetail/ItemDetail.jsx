@@ -11,10 +11,8 @@ const ItemDetail = (details) => {
 
     const onAdd = (params)=> {
         if (params > 0) {
-            console.log("Usted agregó " + params + " unidad/es al carrito.");
             addProduct(details, params);
         } else {
-            console.log("No ha seleccionado unidades para agregar al carrito");
         }
         setFinalizado(true);
     }
@@ -32,9 +30,14 @@ const ItemDetail = (details) => {
                     {!finalizado ? (
                         <ItemCount onAdd={onAdd} stock={details.stock} initial={1} />
                     ) : (
+                        <div className='d-flex flex-column align-items-center'>
                         <Link to="/cart">
-                            <button className='btn btn-primary'>Ir al carrito</button>
+                            <button className='btn btn-primary my-2'>Ir al carrito</button>
                         </Link>
+                        <Link to="/">
+                            <button className='btn btn-primary my-2'>Ver más productos</button>
+                        </Link>
+                        </div>
                     )}
                 </div>
             </div>

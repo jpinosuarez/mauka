@@ -8,32 +8,7 @@ import { Link } from 'react-router-dom/umd/react-router-dom.development';
 
 const Cart = () => {
 
-    const { cart } = useContext(contexto);
-
-    // const IsCartEmpty = () => {
-    //     // if (cart.length === 0) { 
-    //     //     return true;} else if (cart.length>0) {
-    //     //         return false;
-    //     //     }
-    //     if (cart.length===0) {
-    //         return true;
-    //     } else {
-    //         return false;
-    //     }
-    // }
-
-    // const {productsInCart, setProductsInCart} = useState([]);
-
-    // useEffect(() => {
-    //     first
-
-    //     return () => {
-    //         second
-    //     }
-    // }, [third])
-
-
-
+    const { cart, total } = useContext(contexto);
 
     return (
         <>
@@ -42,7 +17,7 @@ const Cart = () => {
                     <h1>Carrito de compras</h1>
                     <div className='d-flex flex-row justify-content-around'>
                         <div className='w-75 px-5'>
-                            <ul className='d-flex flex-row justify-content-around'>
+                            <ul className='d-flex flex-row justify-content-around border-bottom border-secondary'>
                                 <li className='w-75'>Item</li>
                                 <div className='w-25 d-flex flex-row justify-content-around'>
                                     <li>Precio</li>
@@ -55,12 +30,17 @@ const Cart = () => {
                             })}
                         </div>
                         <div className='w-25 px-5'>
-                            <h2>Resumen</h2>
+                            <p className='border-bottom border-secondary'>Resumen</p>
+                            <p>Subtotal</p>
+                            <p>${total}</p>
+                            <p>Total del pedido</p>
+                            <p>${total}</p>
+                            <button className='btn btn-primary'>Finalizar el pedido</button>
                         </div>
                     </div>
                 </div>
-                : <div className='d-flex flex-row justify-content-center'>
-                    <div className='d-flex flex-column '>
+                : <div className='d-flex flex-row justify-content-center align-items-center'>
+                    <div className='d-flex flex-column mx-5'>
                         <h1>Carrito vacio</h1>
                         <p>No tienes ningún artículo en tu carrito de compras.</p>
                         <p>Hacé clic <Link to="/">aquí</Link> para continuar comprando.</p>
