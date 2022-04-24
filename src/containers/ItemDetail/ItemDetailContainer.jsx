@@ -6,6 +6,8 @@ import { productosIniciales } from "../../mock/productosIniciales";
 // =========================
 import { css } from "@emotion/react";
 import GridLoader from "react-spinners/GridLoader";
+import { db } from "../../firebase/firebase";
+import { doc, getDoc, collection } from "firebase/firestore";
 // =========================
 
 const promesa = new Promise((resolve, reject) => {
@@ -27,16 +29,22 @@ const ItemDetailContainer = () => {
     // =========================
     let [loading, setLoading] = useState(true);
     // =========================
-    const {id} = useParams();
+    const { id } = useParams();
 
     useEffect(() => {
-        promesa.then((producto) => {
-            setProducto(producto.find(p=>p.id==id))
-        }).catch(() => {
-            console.log("error");
-        }).finally(()=>{
-            setLoading(false);
-        })
+
+        const productsCollection = collection(db, "ItemCollection");
+        const refDoc = doc(productsCollection, id)
+        getDoc(refDoc)
+            .then((result) => {
+                setProducto(result.data());
+            })
+            .catch(() => {
+                console.log("error");
+            })
+            .finally(() => {
+                setLoading(false);
+            })
     }, [id])
 
     return (

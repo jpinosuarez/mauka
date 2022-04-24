@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { getDocs, collection, query, where } from "firebase/firestore";
 import ItemList from "./ItemList"
 import { useParams } from "react-router-dom/umd/react-router-dom.development";
 import { productosIniciales } from "../../mock/productosIniciales";
+import { db } from "../../firebase/firebase";
 
 // =========================
 import { css } from "@emotion/react";
@@ -23,6 +25,7 @@ const override = css`
 
 const ItemListContainer = () => {
 
+
     const [productos, setProductos] = useState([]);
     // =========================
     let [loading, setLoading] = useState(true);
@@ -32,17 +35,37 @@ const ItemListContainer = () => {
 
     useEffect(() => {
 
-        promesa.then((productos) => {
-            if (id) {
-                setProductos(productos.filter(producto=>producto.category===id))
-            }else{
-                setProductos(productos)
-            }
-        }).catch(() => {
-            console.log("error");
-        }).finally(()=>{
-            setLoading(false);
+        const productsCollection = collection(db, "ItemCollection")
+        const q = query(productsCollection, where("category", "==", "hombres"));
+
+        getDocs(productsCollection)
+        .then((result)=>{
+            const docs = result.docs;
+            const lista = docs.map((producto)=>{
+                const id = producto.id;
+                const product = {id, ...producto.data()}
+                return product;
+            });
+            console.log(lista);
+            setProductos(lista);
         })
+        .catch(error=>{console.log(error);})
+        .finally(()=>{setLoading(false)})
+
+
+
+
+        // promesa.then((productos) => {
+        //     if (id) {
+        //         setProductos(productos.filter(producto=>producto.category===id))
+        //     }else{
+        //         setProductos(productos)
+        //     }
+        // }).catch(() => {
+        //     console.log("error");
+        // }).finally(()=>{
+        //     setLoading(false);
+        // })
 
     }, [id])
 
