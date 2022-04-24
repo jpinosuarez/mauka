@@ -21,8 +21,10 @@ const CustomProvider = ({ children }) => {
             setCart([...cart, newProduct]);
             setWidgetQty(widgetQty+qty)
         }
-        // setWidgetQty(widgetQty+qty)
-        // updateTotals();
+
+        if (cart.length==0) {
+            setTotal(product.price*qty)
+        }
     };
 
     const removeItem = (item) => {
@@ -43,9 +45,10 @@ const CustomProvider = ({ children }) => {
         let total = 0;
         cart.forEach(product => {
             qtyCart+=product.qty;
-            total+=product.price;
+            total+=product.price*product.qty;
         });
         setWidgetQty(qtyCart);
+        setTotal(total);
     }
 
 
@@ -56,7 +59,8 @@ const CustomProvider = ({ children }) => {
         removeItem,
         clear,
         widgetQty,
-        total
+        total,
+        setTotal,
     }
 
     return (

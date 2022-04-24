@@ -8,7 +8,16 @@ import { Link } from 'react-router-dom/umd/react-router-dom.development';
 
 const Cart = () => {
 
-    const { cart, total } = useContext(contexto);
+    const { cart, total, setTotal } = useContext(contexto);
+
+    useEffect(() => {
+        let total = 0;
+        cart.forEach(product => {
+            total += product.price * product.qty;
+        });
+        setTotal(total);
+    }, [cart.length]);
+
 
     return (
         <>
