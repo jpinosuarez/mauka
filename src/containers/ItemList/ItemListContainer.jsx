@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { getDocs, collection, query, where } from "firebase/firestore";
 import ItemList from "./ItemList"
 import { useParams } from "react-router-dom/umd/react-router-dom.development";
-import { productosIniciales } from "../../mock/productosIniciales";
 import { db } from "../../firebase/firebase";
 
 // =========================
@@ -29,26 +28,26 @@ const ItemListContainer = () => {
     let [loading, setLoading] = useState(true);
     // =========================
 
-    const {id} = useParams();
+    const { id } = useParams();
 
     useEffect(() => {
         const productsCollection = collection(db, "ItemCollection")
         const q = query(productsCollection, where("category", "==", `${id}`));
 
-        const llamado = id?q:productsCollection;
+        const llamado = id ? q : productsCollection;
 
         getDocs(llamado)
-        .then((result)=>{
-            const docs = result.docs;
-            const lista = docs.map((producto)=>{
-                const id = producto.id;
-                const product = {id, ...producto.data()}
-                return product;
-            });
-            setProductos(lista);
-        })
-        .catch(error=>{console.log(error);})
-        .finally(()=>{setLoading(false)})
+            .then((result) => {
+                const docs = result.docs;
+                const lista = docs.map((producto) => {
+                    const id = producto.id;
+                    const product = { id, ...producto.data() }
+                    return product;
+                });
+                setProductos(lista);
+            })
+            .catch(error => { console.log(error); })
+            .finally(() => { setLoading(false) })
     }, [id])
 
     return (

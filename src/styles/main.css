@@ -54,3 +54,12 @@ nav {
     transition: 0.2s ease-in-out;
     color: #E87D31;
     cursor: pointer; }
+
+.Col {
+  margin-bottom: 15px; }
+
+.album {
+  text-align: center;
+  padding: 15px;
+  background-color: yellowgreen;
+  border-radius: 5px; }
