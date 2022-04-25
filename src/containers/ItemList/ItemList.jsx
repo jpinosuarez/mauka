@@ -8,19 +8,10 @@ const ItemList = (items) => {
     return (
         <>
             <GridSystem colCount={4} md={6}>
-
                 {productos.map((item) => {
                     return <Item key={item.id} id={item.id} title={item.title} pictureUrl={item.pictureUrl} price={item.price} />
                 })}
-
-                {/* {productos.length > 0 ?
-                    productos.map((item) => {
-                        return <Item key={item.id} id={item.id} title={item.title} pictureUrl={item.pictureUrl} price={item.price} />
-                    })
-                    : [<p>No se encontraron productos</p>]} */}
             </GridSystem>
-
-
         </>
     )
 }
