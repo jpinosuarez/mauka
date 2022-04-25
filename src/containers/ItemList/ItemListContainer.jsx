@@ -10,12 +10,11 @@ import { css } from "@emotion/react";
 import GridLoader from "react-spinners/GridLoader";
 // =========================
 
-const promesa = new Promise((resolve, reject) => {
-    setTimeout(() => {
-        resolve(productosIniciales);
-    }, 2000)
-});
-
+// const promesa = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//         resolve(productosIniciales);
+//     }, 2000)
+// });
 
 const override = css`
     display: block;
@@ -25,7 +24,6 @@ const override = css`
 
 const ItemListContainer = () => {
 
-
     const [productos, setProductos] = useState([]);
     // =========================
     let [loading, setLoading] = useState(true);
@@ -34,11 +32,12 @@ const ItemListContainer = () => {
     const {id} = useParams();
 
     useEffect(() => {
-
         const productsCollection = collection(db, "ItemCollection")
-        const q = query(productsCollection, where("category", "==", "hombres"));
+        const q = query(productsCollection, where("category", "==", `${id}`));
 
-        getDocs(productsCollection)
+        const llamado = id?q:productsCollection;
+
+        getDocs(llamado)
         .then((result)=>{
             const docs = result.docs;
             const lista = docs.map((producto)=>{
@@ -46,30 +45,11 @@ const ItemListContainer = () => {
                 const product = {id, ...producto.data()}
                 return product;
             });
-            console.log(lista);
             setProductos(lista);
         })
         .catch(error=>{console.log(error);})
         .finally(()=>{setLoading(false)})
-
-
-
-
-        // promesa.then((productos) => {
-        //     if (id) {
-        //         setProductos(productos.filter(producto=>producto.category===id))
-        //     }else{
-        //         setProductos(productos)
-        //     }
-        // }).catch(() => {
-        //     console.log("error");
-        // }).finally(()=>{
-        //     setLoading(false);
-        // })
-
     }, [id])
-
-
 
     return (
         <>

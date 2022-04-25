@@ -37,7 +37,9 @@ const ItemDetailContainer = () => {
         const refDoc = doc(productsCollection, id)
         getDoc(refDoc)
             .then((result) => {
-                setProducto(result.data());
+                const id = result.id;
+                const product = {id, ...result.data()}
+                setProducto(product);
             })
             .catch(() => {
                 console.log("error");
