@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/maukaPinoSuarez/static/css/main.15e9ca69.chunk.css",
-    "main.js": "/maukaPinoSuarez/static/js/main.2dc6bbab.chunk.js",
-    "main.js.map": "/maukaPinoSuarez/static/js/main.2dc6bbab.chunk.js.map",
-    "runtime-main.js": "/maukaPinoSuarez/static/js/runtime-main.8ddfdb99.js",
-    "runtime-main.js.map": "/maukaPinoSuarez/static/js/runtime-main.8ddfdb99.js.map",
-    "static/js/2.7c86b3a1.chunk.js": "/maukaPinoSuarez/static/js/2.7c86b3a1.chunk.js",
-    "static/js/2.7c86b3a1.chunk.js.map": "/maukaPinoSuarez/static/js/2.7c86b3a1.chunk.js.map",
-    "static/js/3.bbaec06c.chunk.js": "/maukaPinoSuarez/static/js/3.bbaec06c.chunk.js",
-    "static/js/3.bbaec06c.chunk.js.map": "/maukaPinoSuarez/static/js/3.bbaec06c.chunk.js.map",
+    "main.css": "/maukaPinoSuarez/static/css/main.64a30e5f.chunk.css",
+    "main.js": "/maukaPinoSuarez/static/js/main.0ffd3c16.chunk.js",
+    "main.js.map": "/maukaPinoSuarez/static/js/main.0ffd3c16.chunk.js.map",
+    "runtime-main.js": "/maukaPinoSuarez/static/js/runtime-main.f0a07526.js",
+    "runtime-main.js.map": "/maukaPinoSuarez/static/js/runtime-main.f0a07526.js.map",
+    "static/js/2.9fc8110c.chunk.js": "/maukaPinoSuarez/static/js/2.9fc8110c.chunk.js",
+    "static/js/2.9fc8110c.chunk.js.map": "/maukaPinoSuarez/static/js/2.9fc8110c.chunk.js.map",
+    "static/js/3.bb38ae4c.chunk.js": "/maukaPinoSuarez/static/js/3.bb38ae4c.chunk.js",
+    "static/js/3.bb38ae4c.chunk.js.map": "/maukaPinoSuarez/static/js/3.bb38ae4c.chunk.js.map",
     "index.html": "/maukaPinoSuarez/index.html",
-    "static/css/main.15e9ca69.chunk.css.map": "/maukaPinoSuarez/static/css/main.15e9ca69.chunk.css.map",
-    "static/js/2.7c86b3a1.chunk.js.LICENSE.txt": "/maukaPinoSuarez/static/js/2.7c86b3a1.chunk.js.LICENSE.txt",
+    "static/css/main.64a30e5f.chunk.css.map": "/maukaPinoSuarez/static/css/main.64a30e5f.chunk.css.map",
+    "static/js/2.9fc8110c.chunk.js.LICENSE.txt": "/maukaPinoSuarez/static/js/2.9fc8110c.chunk.js.LICENSE.txt",
     "static/media/error404.73f86242.svg": "/maukaPinoSuarez/static/media/error404.73f86242.svg",
     "static/media/logo.a9eecb26.png": "/maukaPinoSuarez/static/media/logo.a9eecb26.png",
     "static/media/undraw_empty_cart_co35.88a79f64.svg": "/maukaPinoSuarez/static/media/undraw_empty_cart_co35.88a79f64.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.8ddfdb99.js",
-    "static/js/2.7c86b3a1.chunk.js",
-    "static/css/main.15e9ca69.chunk.css",
-    "static/js/main.2dc6bbab.chunk.js"
+    "static/js/runtime-main.f0a07526.js",
+    "static/js/2.9fc8110c.chunk.js",
+    "static/css/main.64a30e5f.chunk.css",
+    "static/js/main.0ffd3c16.chunk.js"
   ]
 }
