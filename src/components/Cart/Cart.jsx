@@ -22,8 +22,8 @@ const Cart = () => {
     return (
         <>
             {(cart.length > 0) ?
-                <div id='cart' >
-                    <h1>Carrito de compras</h1>
+                <div className='container' id='cart' >
+                    <h1 className='my-5'>Carrito de compras</h1>
                     <div className='d-flex flex-row justify-content-around'>
                         <div className='w-75 px-5'>
                             <ul className='d-flex flex-row justify-content-around border-bottom border-secondary'>
@@ -38,7 +38,7 @@ const Cart = () => {
                                 return <CartItem id={product.id} title={product.title} price={product.price} pictureURL={product.pictureUrl} qty={product.qty} />
                             })}
                         </div>
-                        <div className='w-25 px-5'>
+                        <div className='w-25 px-4'>
                             <p className='border-bottom border-secondary'>Resumen</p>
                             <p>Subtotal</p>
                             <p>${total}</p>

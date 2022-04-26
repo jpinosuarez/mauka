@@ -7,6 +7,7 @@ import { db } from "../../firebase/firebase";
 // =========================
 import { css } from "@emotion/react";
 import GridLoader from "react-spinners/GridLoader";
+import HeaderCarousel from "../../components/Carousel/Carousel";
 // =========================
 
 // const promesa = new Promise((resolve, reject) => {
@@ -52,6 +53,7 @@ const ItemListContainer = () => {
 
     return (
         <>
+            {id?[]:<HeaderCarousel/>}
             <ItemList productos={productos} />
             <GridLoader color="#e87d31" loading={loading} css={override} size={35} />
         </>

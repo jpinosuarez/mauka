@@ -37,14 +37,13 @@ nav {
 .card {
   width: 18rem; }
 
-#cart {
-  padding: 0 5rem; }
-  #cart h1 {
-    font-size: 1.6rem; }
-  #cart div ul {
-    padding: 0; }
-    #cart div ul li {
-      list-style-type: none; }
+#cart h1 {
+  font-size: 1.6rem; }
+
+#cart div ul {
+  padding: 0; }
+  #cart div ul li {
+    list-style-type: none; }
 
 .CartItem {
   padding: 1.3rem 0; }
@@ -57,9 +56,3 @@ nav {
 
 .Col {
   margin-bottom: 15px; }
-
-.album {
-  text-align: center;
-  padding: 15px;
-  background-color: yellowgreen;
-  border-radius: 5px; }

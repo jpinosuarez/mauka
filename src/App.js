@@ -23,9 +23,9 @@ function App() {
             <Route path="*" element={<Error404 />} />
           </Routes>
         </main>
-        {/* <footer>
+        <footer>
         <Footer/>
-      </footer> */}
+      </footer>
       </CustomProvider>
     </BrowserRouter>
   )

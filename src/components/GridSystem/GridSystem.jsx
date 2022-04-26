@@ -14,13 +14,10 @@ const GridSystem = ({ colCount, children, md }) => {
 
     const renderRows = () => {
         let rows = [];
-
         for (let row = 0; row < rowCount; row++) {
             rows.push(
                 <Row className='Row'>
-                    {
-                        renderCols()
-                    }
+                    {renderCols()}
                 </Row>
             )
         };
@@ -45,9 +42,7 @@ const GridSystem = ({ colCount, children, md }) => {
 
     return (
         <Container className='Container'>
-            {
-                buildGrid()
-            }
+            {buildGrid()}
         </Container>
     )
 };
